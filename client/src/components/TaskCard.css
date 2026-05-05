@@ -1,0 +1,16 @@
+.task-card {
+  background: var(--bg-glass); border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm); padding: 1rem; cursor: pointer;
+  transition: var(--transition); animation: slideIn 0.3s ease;
+}
+.task-card:hover { border-color: var(--border-glow); background: var(--bg-glass-hover); transform: translateY(-2px); }
+.task-card.overdue { border-left: 3px solid var(--danger); }
+.task-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+.task-priority { font-size: 0.75rem; }
+.task-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.3; }
+.task-desc { font-size: 0.78rem; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 0.5rem; }
+.task-card-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+.task-assignee { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-secondary); }
+.unassigned { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
+.task-due { font-size: 0.75rem; color: var(--text-muted); }
+.text-overdue { color: var(--danger) !important; font-weight: 600; }
