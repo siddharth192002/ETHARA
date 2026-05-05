@@ -28,6 +28,38 @@ Ethara is a powerful, full-stack project management application designed for tea
 - MongoDB (Mongoose)
 - JWT (Authentication)
 
+## 📂 Project Structure
+
+```text
+ETHARA/
+├── client/              # Frontend (React + Vite)
+│   ├── src/
+│   │   ├── components/  # Reusable UI components (TaskCard, ProjectCard, etc.)
+│   │   ├── context/     # React Context for global state (AuthContext)
+│   │   ├── pages/       # Page components (Dashboard, Board, Login)
+│   │   ├── utils/       # Axios API configuration
+│   │   └── styles/      # CSS files
+├── server/              # Backend (Node.js + Express)
+│   ├── config/          # Database configuration (MongoDB connection)
+│   ├── controllers/     # Business logic and request handlers
+│   ├── middleware/      # Authentication & Error handling middleware
+│   ├── models/          # Mongoose Schemas (User, Project, Task)
+│   ├── routes/          # API Route definitions
+│   └── server.js        # Server entry point
+└── README.md
+```
+
+## 🔄 Data Flow
+
+1.  **Frontend Interaction**: Users interact with the React frontend.
+2.  **API Request**: Axios (in `client/src/utils/api.js`) sends HTTP requests to the backend with a JWT token in the headers.
+3.  **Authentication**: The `protect` middleware in the backend verifies the JWT token.
+4.  **Routing**: The request is routed to the appropriate controller via `server/routes/`.
+5.  **Controller Logic**: The controller (in `server/controllers/`) performs business logic and interacts with MongoDB via Mongoose models.
+6.  **Database**: MongoDB stores and retrieves data (Projects, Tasks, Users).
+7.  **Response**: The server sends a JSON response back to the client.
+8.  **State Update**: The React frontend updates its state and re-renders the UI to reflect the changes.
+
 ## 📦 Installation & Setup
 
 1. **Clone the repository:**
