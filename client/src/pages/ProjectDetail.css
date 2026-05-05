@@ -1,0 +1,21 @@
+.project-detail { max-width: 1200px; }
+.project-detail-desc { color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem; }
+.header-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.members-bar {
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+  padding: 1rem; background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: var(--radius-md); flex-wrap: wrap;
+}
+.members-label { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+.members-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.member-chip {
+  display: flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+  background: var(--bg-glass); border: 1px solid var(--border-color);
+  border-radius: 50px; font-size: 0.8rem; transition: var(--transition);
+}
+.member-chip:hover { border-color: var(--border-glow); }
+.chip-remove {
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  font-size: 0.7rem; padding: 2px 4px; border-radius: 50%; line-height: 1;
+}
+.chip-remove:hover { color: var(--danger); background: rgba(239, 68, 68, 0.15); }

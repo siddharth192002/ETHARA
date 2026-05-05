@@ -1,0 +1,17 @@
+.stats-card {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.25rem 1.5rem; border-radius: var(--radius-md);
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px); transition: var(--transition);
+}
+.stats-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); border-color: var(--border-glow); }
+.stats-icon { font-size: 2rem; }
+.stats-value { font-size: 1.8rem; font-weight: 800; display: block; line-height: 1; }
+.stats-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+.stats-sub { font-size: 0.75rem; color: var(--text-muted); }
+.stats-purple .stats-value { color: var(--accent-purple-light); }
+.stats-teal .stats-value { color: var(--accent-teal-light); }
+.stats-blue .stats-value { color: var(--accent-blue); }
+.stats-yellow .stats-value { color: var(--status-todo); }
+.stats-red .stats-value { color: var(--priority-high); }
+.stats-green .stats-value { color: var(--status-done); }
