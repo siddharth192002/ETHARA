@@ -11,6 +11,9 @@ connectDB();
 
 const app = express();
 
+// Trust Railway's proxy
+app.set('trust proxy', 1);
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -21,9 +24,21 @@ app.use('/api/projects', require('./routes/projects'));
 app.use('/api/tasks', require('./routes/tasks'));
 app.use('/api/users', require('./routes/users'));
 
-// Health check
+// Health check with DB status
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  const dbStatus = require('mongoose').connection.readyState;
+  const statusMap = {
+    0: 'disconnected',
+    1: 'connected',
+    2: 'connecting',
+    3: 'disconnecting',
+  };
+  
+  res.json({ 
+    status: 'ok', 
+    database: statusMap[dbStatus] || 'unknown',
+    timestamp: new Date().toISOString() 
+  });
 });
 
 // Error handling middleware
